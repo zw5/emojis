@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Dependencies
+      run: sudo apt-get install -f libxcb-composite0-dev
     - name: Build
       run: cargo build --release --verbose
     - name: Run tests
